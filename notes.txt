@@ -1,0 +1,11 @@
+You can add logic to Pug templates (such as conditionals and loops)
+ e.g.
+ if hint
+   p
+     i Hint: #{hint}
+ else
+   p (There is no hint)
+
+   ul
+     each color in colors
+       li= color

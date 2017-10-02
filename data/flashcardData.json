@@ -1,0 +1,25 @@
+{
+  "data": {
+    "title": "This is a title",
+    "cards": [
+      {
+        "question": "שלם",
+        "phonetic": "Shalom",
+        "hint": "Used to greet people when you meet them",
+        "answer": "Hello"
+      },
+      {
+        "question": "?מה קורה",
+        "phonetic": "Ma kor-ay",
+        "hint": "Usually comes after saying hello",
+        "answer": "What's up?/How are you?"
+      },
+      {
+        "question": "בבקשה",
+        "phonetic": "Bih-vah-kah-sha",
+        "hint": "Used in response to thank you",
+        "answer": "You're welcome (also 'please')"
+      }
+    ]
+  }
+}
