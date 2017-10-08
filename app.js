@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const exphbs = require('express-handlebars');
 
 // the express(); function creates a new express application
 const app = express();
@@ -8,7 +9,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.set('view engine', 'pug');
+app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
+app.set('view engine', 'handlebars');
 
 const mainRoutes = require('./routes')
 const cardRoutes = require('./routes/cards')
@@ -18,7 +20,6 @@ app.use(mainRoutes);
 app.use('/cards', cardRoutes);
 
 app.use((req, res, next) => {
-    console.log("Hello I'm middleware");
     const err = new Error("I'm an error");
     err.status = 500;
     next(err);
