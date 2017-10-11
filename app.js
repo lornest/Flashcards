@@ -12,21 +12,16 @@ app.use(cookieParser());
 app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
 app.set('view engine', 'handlebars');
 
-const mainRoutes = require('./routes')
-const cardRoutes = require('./routes/cards')
-
-
-app.use(mainRoutes);
-app.use('/cards', cardRoutes);
+app.use(require('./controllers'));
 
 app.use((req, res, next) => {
-    const err = new Error("I'm an error");
+    const err = new Error("Something went wrong. Please try again later.");
     err.status = 500;
     next(err);
   });
 
 app.use((err, req, res, next) => {
-  const notFound = new Error('Not Found');
+  const notFound = new Error('Page Not Found');
   notFound.status = 404;
   next(notFound);
 });

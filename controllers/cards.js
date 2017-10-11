@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { data } = require('../data/flashcardData.json');
-const { cards } = data;
+const Card = require('../models/card.js');
+const cards  = Card.get();
 
 router.get('/', (req, res) => {
   const numberOfCards = cards.length;
