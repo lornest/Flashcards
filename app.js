@@ -12,6 +12,7 @@ app.use(cookieParser());
 app.engine('handlebars', exphbs({defaultLayout: 'layout'}));
 app.set('view engine', 'handlebars');
 
+app.use(express.static(__dirname + '/public'))
 app.use(require('./controllers'));
 
 app.use((req, res, next) => {

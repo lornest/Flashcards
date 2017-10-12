@@ -1,11 +1,22 @@
-<div>
-    <h2> {{text}} </h2>
-      {{#if hint}}
-        <p>
-          <i> Hint: {{hint}}</i>
-        </p>
-      {{/if}}
-    <a href='{{id}}?side={{flipTo}}')> {{flipToDisplay}} </a>
-  <br>
-    <a href='/cards'>Another question!</a>
+<div class="row">
+  <div class="col">
+    <div class="card" style="width: 40%">
+      <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href='{{id}}?side={{flipTo}}' role="button")> {{flipToDisplay}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"> {{text}} </h4>
+          {{#if hint}}
+            <a data-toggle="popover" data-content='{{hint}}'>
+              Click for hint
+            </a>
+          {{/if}}
+      </div>
+    </div>
+    <a href='/cards'>Another card!</a>
+  </div>
 </div>
